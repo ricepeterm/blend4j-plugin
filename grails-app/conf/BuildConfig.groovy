@@ -51,8 +51,17 @@ grails.project.dependency.resolution = {
         compile ':rdc-rmodules:1.2.2-SNAPSHOT'
         compile ':transmart-legacy-db:1.2.2-SNAPSHOT'
         build ':tomcat:7.0.50'
+
+        // support for static code analysis
+        compile ":codenarc:0.21"
+
     }
-
-
-
 }
+
+codenarc.reports = {
+    TransmartAppReport('html') {
+        outputFile = 'CodeNarc-blend4j-plugin-Report.html'
+        title = 'Report for blend4j-plugin'
+    }
+}
+
